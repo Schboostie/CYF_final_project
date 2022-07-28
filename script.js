@@ -1,5 +1,15 @@
 var array, purchased, item, qp_array, dt_array, tt_array, ft_array, but1_array, but2_array, but3_array;
 
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
 
 array = ['https://secure.img1-cg.wfcdn.com/im/77666093/resize-h445%5Ecompr-r85/6197/61970789/Wrapped+Canvas+Art+Prints.jpg', 'https://media.istockphoto.com/photos/double-cheese-burger-picture-id945057664?k=20', 'https://media.istockphoto.com/photos/delicious-hamburger-with-fire-flames-picture-id468676382?k=20'];
 purchased = [];
@@ -113,16 +123,7 @@ document.getElementById('but8').addEventListener('click', (event) => {
 
 });
 
- function myFunction(){
-          let data = "";  let name = document.getElementById("userName").value
-          let email = document.getElementById("userEmail").value
-          let comment = document.getElementById("userComment").value
-         
-         data = "User name : "+name+"<br/>User email : "+email+ "<br/>User comment : "+comment
-         
-         document.getElementById("data").innerHTML = data  // display data to paragraph
-   
-   document.getElementById('buttonS').addEventListener('click', (event) => {
+document.getElementById('buttonS').addEventListener('click', (event) => {
   let element_list = document.getElementById('list');
   let new_li = document.createElement('li');
   new_li.innerText = getNumberOrString(document.getElementById('text').value);
@@ -130,4 +131,3 @@ document.getElementById('but8').addEventListener('click', (event) => {
   element_list.appendChild(new_li);
 
 });
-         }
