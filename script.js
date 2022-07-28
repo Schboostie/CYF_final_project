@@ -121,4 +121,13 @@ document.getElementById('but8').addEventListener('click', (event) => {
          data = "User name : "+name+"<br/>User email : "+email+ "<br/>User comment : "+comment
          
          document.getElementById("data").innerHTML = data  // display data to paragraph
+   
+   document.getElementById('buttonS').addEventListener('click', (event) => {
+  let element_list = document.getElementById('list');
+  let new_li = document.createElement('li');
+  new_li.innerText = getNumberOrString(document.getElementById('text').value);
+
+  element_list.appendChild(new_li);
+
+});
          }
